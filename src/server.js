@@ -1,5 +1,4 @@
 // install and import express
-const { application } = require("express");
 const express = require("express");
 const data = require("./assets/user.json");
 let app = express();
@@ -7,7 +6,7 @@ let app = express();
 // Code here
 app.use(express.json());
 app.get('/', (req, res) => {
-    res.sendFile('./assets/user.html', {root: __dirnamme })
+    res.status(200).send(data).sendFile('./assets/users.html', {root: __dirnamme })
 });
 
 app.get("/users", async (req, res) => {
